@@ -12,6 +12,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupEvents()
+        setupValues()
     }
 
     override fun setupEvents() {
@@ -22,6 +24,9 @@ class MainActivity : BaseActivity() {
 
         mvpa = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mvpa
+
+//        탭레이아웃 + 뷰페이저 연결
+        myTabLayout.setupWithViewPager(mainViewPager)
 
     }
 }
